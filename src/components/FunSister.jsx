@@ -20,9 +20,9 @@ export default function FunSister() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold mb-3">
             <Laugh size={14} />
-            <span>Sibling Shenanigans</span>
+            <span>Sibling Shenanigans • मीठी तकरार</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold gold-gradient-text mb-4">
+          <h2 className="font-hindi text-3xl sm:text-5xl font-bold gold-gradient-text mb-4">
             Why You're Impossible… But Amazing 😂
           </h2>
           <p className="text-amber-100/70 max-w-lg mx-auto text-sm sm:text-base font-light">
@@ -53,13 +53,21 @@ export default function FunSister() {
                 </span>
               </div>
 
-              {/* Title */}
-              <h3 className="font-serif text-xl font-bold text-amber-100 mb-2 group-hover:text-gold-300 transition-colors">
-                {trait.title}
+              {/* Title Hindi / English */}
+              <h3 className="font-hindi text-xl font-bold text-gold-200 mb-1 group-hover:text-gold-300 transition-colors">
+                {trait.titleHindi || trait.title}
               </h3>
+              <span className="text-xs text-amber-200/70 font-serif italic block mb-3">
+                {trait.title}
+              </span>
 
-              {/* Description */}
-              <p className="text-amber-100/75 text-sm leading-relaxed font-light">
+              {/* Description Hindi & English */}
+              {trait.descHindi && (
+                <p className="font-hindi text-sm text-amber-100/90 leading-relaxed mb-2 font-medium">
+                  "{trait.descHindi}"
+                </p>
+              )}
+              <p className="text-amber-100/70 text-xs leading-relaxed font-sans italic border-l border-gold-500/30 pl-2">
                 {trait.desc}
               </p>
 

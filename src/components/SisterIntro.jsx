@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Sparkles, Crown } from 'lucide-react';
+import { Heart, Sparkles, Crown, Quote } from 'lucide-react';
 import { content } from '../data/content';
 
 export default function SisterIntro() {
@@ -34,17 +34,17 @@ export default function SisterIntro() {
           className="text-center mb-16"
         >
           <span className="text-xs uppercase tracking-widest text-gold-400 font-semibold mb-2 block">
-            Dedicated With All My Heart
+            Dedicated With All My Heart • दिल की गहराइयों से
           </span>
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold gold-gradient-text mb-4">
-            {content.sisterIntro.title}
+          <h2 className="font-hindi text-3xl sm:text-5xl font-bold gold-gradient-text mb-4">
+            {content.sisterIntro.titleHindi || content.sisterIntro.title}
           </h2>
           <p className="text-amber-100/70 max-w-lg mx-auto text-sm sm:text-base font-light">
             {content.sisterIntro.subtitle}
           </p>
         </motion.div>
 
-        {/* 3D Tilt Card & Quote */}
+        {/* 3D Tilt Card & Quotes */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           
           {/* Sister Photo with 3D Tilt Frame */}
@@ -94,24 +94,33 @@ export default function SisterIntro() {
             </div>
           </motion.div>
 
-          {/* Sibling Quote & Fun Badges */}
+          {/* Sibling Quotes & Fun Badges */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="md:col-span-6 flex flex-col gap-6"
+            className="md:col-span-6 flex flex-col gap-5"
           >
-            <div className="glass-festive p-8 rounded-3xl relative overflow-hidden">
-              <div className="text-5xl text-gold-400/30 font-serif absolute -top-2 left-4">
+            {/* Hindi & Hinglish Quote Box */}
+            <div className="glass-festive p-7 rounded-3xl relative overflow-hidden border border-gold-400/40">
+              <div className="text-5xl text-gold-400/20 font-serif absolute -top-2 left-4">
                 “
               </div>
-              <p className="font-serif text-xl sm:text-2xl text-amber-100 font-medium leading-relaxed italic relative z-10 pt-4 mb-4">
-                {content.sisterIntro.quote}
+
+              {/* Hindi Heart Quote */}
+              <p className="font-hindi text-lg sm:text-xl text-gold-100 font-semibold leading-relaxed relative z-10 pt-2 mb-3 drop-shadow">
+                "{content.sisterIntro.quoteHindi}"
               </p>
-              <div className="flex items-center gap-2 text-rose-300 font-cursive text-2xl">
+
+              {/* Hinglish Sibling Banter Quote */}
+              <p className="text-sm sm:text-base text-amber-200/90 italic border-l-2 border-rose-400/60 pl-3 mb-4 leading-relaxed">
+                "{content.sisterIntro.quoteHinglish}"
+              </p>
+
+              <div className="flex items-center gap-2 text-rose-300 font-cursive text-2xl pt-2 border-t border-gold-500/15">
                 <Heart size={20} className="fill-rose-400 text-rose-400" />
-                <span>Always my favorite person</span>
+                <span>Always my favorite person in the world ❤️</span>
               </div>
             </div>
 

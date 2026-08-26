@@ -53,14 +53,24 @@ export default function InteractiveRakhi() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs font-semibold mb-3">
             <Sparkles size={14} />
-            <span>The Sacred Thread</span>
+            <span>The Sacred Thread • रक्षा सूत्र</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold gold-gradient-text mb-4">
-            {content.rakhi.title}
+          <h2 className="font-hindi text-3xl sm:text-5xl font-bold gold-gradient-text mb-4">
+            {content.rakhi.titleHindi || content.rakhi.title}
           </h2>
-          <p className="text-amber-100/80 max-w-xl mx-auto text-sm sm:text-base font-light italic leading-relaxed">
-            "{content.rakhi.quote}"
-          </p>
+          
+          {/* Sanskrit Sloka / Hindi Quote */}
+          {content.rakhi.quoteHindi && (
+            <p className="font-hindi text-base sm:text-xl text-gold-200 font-medium max-w-xl mx-auto mb-2 drop-shadow leading-relaxed">
+              "{content.rakhi.quoteHindi}"
+            </p>
+          )}
+
+          {content.rakhi.quoteHinglish && (
+            <p className="text-amber-100/80 max-w-xl mx-auto text-xs sm:text-sm font-sans italic">
+              "{content.rakhi.quoteHinglish}"
+            </p>
+          )}
         </motion.div>
 
         {/* Central Ornate Rakhi Display */}
@@ -169,10 +179,13 @@ export default function InteractiveRakhi() {
                   <div className="w-12 h-12 rounded-full bg-gold-500/20 border border-gold-400 text-gold-300 flex items-center justify-center mx-auto mb-3">
                     <CheckCircle2 size={28} />
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-gold-300 mb-2">
-                    {content.rakhi.successHeading}
+                  <h3 className="font-hindi text-2xl font-bold text-gold-300 mb-2">
+                    {content.rakhi.successHeadingHindi || content.rakhi.successHeading}
                   </h3>
-                  <p className="text-amber-100/90 text-sm leading-relaxed font-light">
+                  <p className="font-hindi text-gold-100 text-base leading-relaxed mb-2">
+                    {content.rakhi.successSubHindi}
+                  </p>
+                  <p className="text-amber-100/80 text-xs leading-relaxed font-light">
                     {content.rakhi.successSub}
                   </p>
                 </motion.div>

@@ -7,6 +7,7 @@ import { content } from '../data/content';
 export default function SurpriseGift() {
   const [isOpen, setIsOpen] = useState(false);
   const [isShaking, setIsShaking] = useState(false);
+  const [letterLanguage, setLetterLanguage] = useState('hindi'); // 'hindi', 'english'
 
   const handleOpenGift = () => {
     setIsShaking(true);
@@ -42,6 +43,10 @@ export default function SurpriseGift() {
     }, 900);
   };
 
+  const currentLetter = letterLanguage === 'hindi'
+    ? (content.surprise.letterHindi || content.surprise.letter)
+    : content.surprise.letter;
+
   return (
     <section id="surprise" className="py-28 px-4 relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Dynamic Background Aura */}
@@ -63,10 +68,10 @@ export default function SurpriseGift() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs font-semibold mb-3">
             <Gift size={14} />
-            <span>The Grand Finale</span>
+            <span>The Grand Finale • दिल से तोहफा</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-6xl font-bold gold-gradient-text mb-4">
-            {content.surprise.title}
+          <h2 className="font-hindi text-3xl sm:text-6xl font-bold gold-gradient-text mb-4">
+            {content.surprise.titleHindi || content.surprise.title}
           </h2>
           <p className="text-amber-100/70 max-w-lg mx-auto text-sm sm:text-base font-light">
             {content.surprise.subtitle}
@@ -151,7 +156,7 @@ export default function SurpriseGift() {
                 className="px-10 py-4 rounded-full bg-gradient-to-r from-gold-500 via-amber-400 to-gold-600 text-plum-950 font-bold text-lg shadow-[0_0_40px_rgba(212,175,55,0.7)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-3"
               >
                 <Sparkles size={20} className="text-plum-950" />
-                <span>{isShaking ? "Opening your surprise..." : content.surprise.buttonText}</span>
+                <span>{isShaking ? "Opening your surprise..." : (content.surprise.buttonTextHindi || content.surprise.buttonText)}</span>
                 <Heart size={20} className="fill-plum-950 text-plum-950 animate-pulse" />
               </button>
             </motion.div>
@@ -164,18 +169,48 @@ export default function SurpriseGift() {
               transition={{ duration: 0.9, ease: 'easeOut' }}
               className="glass-festive p-8 sm:p-14 rounded-3xl border-2 border-gold-400/80 shadow-[0_20px_70px_rgba(212,175,55,0.35)] relative text-left"
             >
-              {/* Corner Festive Mandalas */}
+              {/* Language Switcher for Letter */}
+              <div className="flex justify-center mb-6">
+                <div className="inline-flex rounded-full bg-plum-900/80 border border-gold-500/30 p-1">
+                  <button
+                    onClick={() => setLetterLanguage('hindi')}
+                    className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+                      letterLanguage === 'hindi'
+                        ? 'bg-gold-500 text-plum-950 shadow-md font-hindi'
+                        : 'text-gold-300/80 hover:text-gold-200'
+                    }`}
+                  >
+                    📜 हिंदी पत्र (Hindi)
+                  </button>
+                  <button
+                    onClick={() => setLetterLanguage('english')}
+                    className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+                      letterLanguage === 'english'
+                        ? 'bg-gold-500 text-plum-950 shadow-md font-sans'
+                        : 'text-gold-300/80 hover:text-gold-200'
+                    }`}
+                  >
+                    💌 English Letter
+                  </button>
+                </div>
+              </div>
+
+              {/* Heading */}
               <div className="text-center mb-8">
-                <span className="font-cursive text-5xl sm:text-7xl rose-gold-gradient block mb-2">
-                  {content.surprise.heading}
+                <span className={`text-4xl sm:text-6xl rose-gold-gradient block mb-2 ${letterLanguage === 'hindi' ? 'font-hindi' : 'font-cursive'}`}>
+                  {letterLanguage === 'hindi'
+                    ? (content.surprise.headingHindi || content.surprise.heading)
+                    : content.surprise.heading}
                 </span>
                 <div className="w-28 h-0.5 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto" />
               </div>
 
               {/* Heartfelt Letter Paragraphs */}
-              <div className="flex flex-col gap-5 text-amber-100/90 font-serif text-base sm:text-lg leading-relaxed mb-10">
-                {content.surprise.letter.map((para, i) => (
-                  <p key={i}>{para}</p>
+              <div className="flex flex-col gap-5 text-amber-100/90 text-base sm:text-lg leading-relaxed mb-10">
+                {currentLetter.map((para, i) => (
+                  <p key={i} className={letterLanguage === 'hindi' ? 'font-hindi text-base sm:text-xl' : 'font-serif'}>
+                    {para}
+                  </p>
                 ))}
               </div>
 
@@ -190,7 +225,10 @@ export default function SurpriseGift() {
                   <div className="absolute inset-0 bg-gradient-to-t from-plum-950/90 via-plum-950/20 to-transparent" />
                   
                   <div className="absolute bottom-5 left-5 right-5 text-center">
-                    <p className="font-cursive text-3xl sm:text-4xl text-gold-200 drop-shadow-lg">
+                    <p className="font-hindi text-2xl sm:text-4xl text-gold-200 drop-shadow-lg mb-1">
+                      {content.surprise.finalPhotoCaptionHindi || "एक हज़ारों में मेरी बहना है! ❤️✨"}
+                    </p>
+                    <p className="font-cursive text-2xl text-amber-200/80">
                       {content.surprise.finalPhotoCaption}
                     </p>
                   </div>
@@ -199,7 +237,10 @@ export default function SurpriseGift() {
 
               {/* Tagline & Signoff */}
               <div className="text-center pt-6 border-t border-gold-500/20">
-                <p className="font-cursive text-4xl sm:text-5xl text-gold-300 mb-3">
+                <p className="font-hindi text-2xl sm:text-3xl text-gold-300 mb-2">
+                  {content.surprise.finalTaglineHindi || "सदा खुश रहो और मुस्कुराती रहो! ❤️"}
+                </p>
+                <p className="font-cursive text-3xl sm:text-4xl text-rose-300 mb-3">
                   {content.surprise.finalTagline}
                 </p>
                 <span className="text-xs text-amber-200/60 font-mono tracking-widest uppercase">

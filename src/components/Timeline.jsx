@@ -21,10 +21,10 @@ export default function Timeline() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs font-semibold mb-3">
             <BookOpen size={14} />
-            <span>Memories Through The Years</span>
+            <span>Memories Through The Years • बचपन से आज तक</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold gold-gradient-text mb-4">
-            Our Little Story 📖
+          <h2 className="font-hindi text-3xl sm:text-5xl font-bold gold-gradient-text mb-4">
+            Our Little Story & Quotes 📖
           </h2>
           <p className="text-amber-100/70 max-w-lg mx-auto text-sm sm:text-base font-light">
             Every chapter of our journey has been filled with laughter, tiny chaos, and infinite love.
@@ -59,7 +59,7 @@ export default function Timeline() {
 
                   {/* Content Card Side */}
                   <div className="w-full md:w-1/2 pl-14 md:pl-0 md:px-10">
-                    <div className="glass-festive glass-festive-hover p-6 sm:p-8 rounded-3xl relative overflow-hidden group">
+                    <div className="glass-festive glass-festive-hover p-6 sm:p-8 rounded-3xl relative overflow-hidden group border border-gold-500/25">
                       
                       {/* Chapter Pill */}
                       <div className="flex items-center justify-between gap-2 mb-3">
@@ -73,38 +73,49 @@ export default function Timeline() {
                       </div>
 
                       {/* Title */}
-                      <h3 className="font-serif text-xl sm:text-2xl font-bold text-amber-100 mb-3 group-hover:text-gold-300 transition-colors">
-                        {item.title}
+                      <h3 className="font-hindi text-xl sm:text-2xl font-bold text-amber-100 mb-1 group-hover:text-gold-300 transition-colors">
+                        {item.titleHindi || item.title}
                       </h3>
+                      {item.titleHindi && (
+                        <span className="text-xs text-gold-400/80 font-serif italic block mb-3">
+                          {item.title}
+                        </span>
+                      )}
 
                       {/* Story Description */}
                       <p className="text-amber-100/80 text-sm sm:text-base leading-relaxed mb-5 font-light">
                         {item.description}
                       </p>
 
-                      {/* Memory Quote Box */}
-                      {item.quote && (
-                        <div className="bg-plum-950/60 border-l-2 border-gold-400 p-3 rounded-r-xl text-xs sm:text-sm text-amber-200/90 italic flex items-start gap-2">
-                          <Quote size={14} className="text-gold-400 shrink-0 mt-0.5" />
-                          <span>{item.quote}</span>
-                        </div>
-                      )}
+                      {/* Hindi & Hinglish Quotes Showcase */}
+                      <div className="flex flex-col gap-2 bg-plum-950/75 border-l-2 border-gold-400 p-4 rounded-r-2xl shadow-inner">
+                        {item.quoteHindi && (
+                          <p className="font-hindi text-sm sm:text-base text-gold-200 font-medium leading-snug">
+                            "{item.quoteHindi}"
+                          </p>
+                        )}
+                        {item.quoteHinglish && (
+                          <p className="text-xs text-amber-200/80 italic font-sans">
+                            "{item.quoteHinglish}"
+                          </p>
+                        )}
+                      </div>
                     </div>
                   </div>
 
                   {/* Photo Side */}
                   <div className="w-full md:w-1/2 pl-14 md:pl-0 md:px-10 mt-6 md:mt-0">
-                    <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl border border-gold-500/20 group">
+                    <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl border-2 border-gold-500/30 group">
                       <img
                         src={item.image}
                         alt={item.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-plum-950/70 via-transparent to-transparent opacity-50" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-plum-950/80 via-transparent to-transparent opacity-60" />
                       
-                      <div className="absolute bottom-3 left-3 right-3 text-xs text-gold-200/90 font-medium font-serif bg-plum-950/70 backdrop-blur-md py-1.5 px-3 rounded-lg border border-gold-500/20 inline-block truncate">
-                        ✨ {item.title}
+                      <div className="absolute bottom-3 left-3 right-3 text-xs text-gold-200 font-hindi bg-plum-950/80 backdrop-blur-md py-1.5 px-3 rounded-lg border border-gold-500/30 truncate">
+                        ✨ {item.titleHindi || item.title}
                       </div>
                     </div>
                   </div>

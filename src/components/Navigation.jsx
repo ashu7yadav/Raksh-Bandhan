@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, Menu, X, Heart, Music, Image as ImageIcon, BookOpen, Gift } from 'lucide-react';
+import { Sparkles, Menu, X, Heart, Music, Image as ImageIcon, BookOpen, Gift, Quote } from 'lucide-react';
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -20,6 +20,7 @@ export default function Navigation() {
   const navItems = [
     { label: 'Home', href: '#hero', icon: Heart },
     { label: 'Story', href: '#story', icon: BookOpen },
+    { label: 'Quotes', href: '#quotes', icon: Quote },
     { label: 'Unsaid Words', href: '#unsaid', icon: Sparkles },
     { label: 'Playful', href: '#fun', icon: Sparkles },
     { label: 'Playlist', href: '#soundtrack', icon: Music },
@@ -57,7 +58,7 @@ export default function Navigation() {
               <a
                 key={item.label}
                 href={item.href}
-                className="px-3.5 py-1.5 rounded-full text-xs font-medium text-amber-100/80 hover:text-gold-300 hover:bg-gold-500/10 transition-all duration-200"
+                className="px-3 py-1.5 rounded-full text-xs font-medium text-amber-100/80 hover:text-gold-300 hover:bg-gold-500/10 transition-all duration-200"
               >
                 {item.label}
               </a>
@@ -78,7 +79,7 @@ export default function Navigation() {
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-30 bg-plum-950/95 backdrop-blur-2xl md:hidden pt-24 px-6 flex flex-col justify-between pb-12 animate-fadeIn">
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-2.5">
             {navItems.map((item) => {
               const Icon = item.icon;
               return (
@@ -86,9 +87,9 @@ export default function Navigation() {
                   key={item.label}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-4 py-3 px-5 rounded-2xl bg-plum-900/50 border border-gold-500/20 text-gold-200 text-lg font-serif hover:bg-gold-500/20 transition-all"
+                  className="flex items-center gap-4 py-2.5 px-5 rounded-2xl bg-plum-900/50 border border-gold-500/20 text-gold-200 text-base font-serif hover:bg-gold-500/20 transition-all"
                 >
-                  <Icon size={20} className="text-gold-400" />
+                  <Icon size={18} className="text-gold-400" />
                   <span>{item.label}</span>
                 </a>
               );

@@ -6,6 +6,7 @@ import FloatingMusicButton from './components/FloatingMusicButton';
 import Hero from './components/Hero';
 import SisterIntro from './components/SisterIntro';
 import Timeline from './components/Timeline';
+import QuotesShayari from './components/QuotesShayari';
 import UnsaidWords from './components/UnsaidWords';
 import FunSister from './components/FunSister';
 import SpotifySoundtrack from './components/SpotifySoundtrack';
@@ -34,6 +35,7 @@ export default function App() {
         <Hero />
         <SisterIntro />
         <Timeline />
+        <QuotesShayari />
         <UnsaidWords />
         <FunSister />
         <SpotifySoundtrack />

@@ -37,13 +37,13 @@ export default function UnsaidWords() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs font-semibold mb-3">
             <Heart size={14} />
-            <span>Straight From The Heart</span>
+            <span>दिल की अनकही बातें • Things I Don't Say Often</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold rose-gold-gradient mb-4">
+          <h2 className="font-hindi text-3xl sm:text-5xl font-bold rose-gold-gradient mb-4">
             Things I Don't Say Often… ❤️
           </h2>
           <p className="text-amber-100/70 max-w-lg mx-auto text-sm sm:text-base font-light">
-            Sometimes we get too busy teasing each other to say what truly matters. Tap each envelope to reveal a confession.
+            Sometimes we get too busy teasing each other to say what truly matters. Tap each envelope to reveal a heartfelt confession in Hindi & Hinglish.
           </p>
         </motion.div>
 
@@ -59,7 +59,7 @@ export default function UnsaidWords() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="h-64 sm:h-72 perspective-1000 cursor-pointer"
+                className="h-80 sm:h-84 perspective-1000 cursor-pointer"
                 onClick={() => toggleFlip(item.id)}
               >
                 <div
@@ -68,7 +68,7 @@ export default function UnsaidWords() {
                   }`}
                 >
                   {/* FRONT SIDE (Mystery Envelope / Teaser) */}
-                  <div className="absolute inset-0 w-full h-full backface-hidden rounded-3xl p-7 flex flex-col justify-between glass-festive glass-festive-hover border border-gold-500/30 bg-gradient-to-br from-plum-900/80 via-plum-950/90 to-burgundy-950/80">
+                  <div className="absolute inset-0 w-full h-full backface-hidden rounded-3xl p-6 flex flex-col justify-between glass-festive glass-festive-hover border border-gold-500/30 bg-gradient-to-br from-plum-900/80 via-plum-950/90 to-burgundy-950/80">
                     <div className="flex justify-between items-start">
                       <span className="text-xs font-mono font-bold text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/20">
                         Secret #0{item.id}
@@ -79,19 +79,24 @@ export default function UnsaidWords() {
                     </div>
 
                     <div className="my-auto">
-                      <p className="font-serif text-lg text-amber-100/90 font-medium">
+                      {item.teaserHindi && (
+                        <p className="font-hindi text-base sm:text-lg text-gold-200 font-medium mb-1">
+                          "{item.teaserHindi}"
+                        </p>
+                      )}
+                      <p className="font-serif text-sm text-amber-100/80 italic">
                         "{item.teaser}"
                       </p>
                     </div>
 
                     <div className="flex items-center justify-center gap-2 py-2 px-4 rounded-full bg-gold-500/10 border border-gold-400/30 text-gold-300 text-xs font-semibold group-hover:bg-gold-500/20 transition-colors">
                       <Eye size={14} className="animate-pulse" />
-                      <span>Tap to reveal ✨</span>
+                      <span>Tap to reveal confession ✨</span>
                     </div>
                   </div>
 
                   {/* BACK SIDE (Heartfelt Revealed Truth) */}
-                  <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-3xl p-7 flex flex-col justify-between bg-gradient-to-br from-burgundy-900 via-plum-900 to-rose-950/90 border-2 border-gold-400 shadow-[0_0_30px_rgba(212,175,55,0.4)]">
+                  <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-3xl p-6 flex flex-col justify-between bg-gradient-to-br from-burgundy-900 via-plum-900 to-rose-950/90 border-2 border-gold-400 shadow-[0_0_30px_rgba(212,175,55,0.4)]">
                     <div className="flex justify-between items-center">
                       <span className="text-xs font-mono font-bold text-rose-300 bg-rose-500/20 px-3 py-1 rounded-full border border-rose-500/30">
                         From My Heart 💌
@@ -99,13 +104,20 @@ export default function UnsaidWords() {
                       <CheckCircle2 size={20} className="text-gold-400" />
                     </div>
 
-                    <div className="my-auto">
-                      <p className="font-serif text-base sm:text-lg text-amber-50 font-medium leading-relaxed italic">
-                        "{item.secret}"
-                      </p>
+                    <div className="my-auto flex flex-col gap-2">
+                      {item.secretHindi && (
+                        <p className="font-hindi text-sm sm:text-base text-gold-100 font-medium leading-relaxed">
+                          "{item.secretHindi}"
+                        </p>
+                      )}
+                      {item.secretHinglish && (
+                        <p className="text-xs text-amber-200/90 italic font-sans border-l border-rose-400/50 pl-2">
+                          "{item.secretHinglish}"
+                        </p>
+                      )}
                     </div>
 
-                    <div className="text-center text-xs text-gold-300/80 font-cursive text-xl">
+                    <div className="text-center text-xs text-gold-300 font-cursive text-xl">
                       Forever true ❤️
                     </div>
                   </div>

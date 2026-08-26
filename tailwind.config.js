@@ -44,6 +44,8 @@ export default {
         cursive: ['"Great Vibes"', 'cursive'],
         serif: ['"Playfair Display"', 'serif'],
         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+        hindi: ['"Rozha One"', '"Playfair Display"', 'serif'],
+        kalam: ['"Kalam"', '"Great Vibes"', 'cursive'],
       },
       animation: {
         'float-slow': 'floatSlow 6s ease-in-out infinite',
