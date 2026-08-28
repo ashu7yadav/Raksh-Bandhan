@@ -231,6 +231,46 @@ export const content = {
       image: "/images/memory_5.jpg",
       tag: "Secret Mastermind",
       likes: 119
+    },
+    {
+      id: "q9",
+      category: "rakhi",
+      categoryLabel: "🧵 रक्षा बंधन स्पेशल",
+      quoteHindi: "कलाई पर रेशम का धागा, माथे पर चन्दन का टीका,\nबहन के प्यार के आगे दुनिया का हर सुख फीका!",
+      quoteHinglish: "Kalai par resham ka dhaaga aur behen ka dulaar — Rakhi bond forever! 🧵❤️",
+      image: "/images/memory_11.jpg",
+      tag: "Rakhi Vows",
+      likes: 142
+    },
+    {
+      id: "q10",
+      category: "masti",
+      categoryLabel: "😂 सिबलिंग मस्ती",
+      quoteHindi: "हम जब भी साथ होते हैं, तो घर में हंसी और ड्रामे का तूफान आ जाता है! ⚡😂",
+      quoteHinglish: "The ultimate sibling trio — full volume, 100% drama, infinite laughter! ⚡😂",
+      image: "/images/memory_13.jpg",
+      tag: "Sibling Squad",
+      likes: 135
+    },
+    {
+      id: "q11",
+      category: "shayari",
+      categoryLabel: "📜 दिल से हिंदी शायरी",
+      quoteHindi: "अपनों का साथ हो तो हर दिन त्योहार बन जाता है,\nपरिवार की खुशियों से ही हर आंगन महक जाता है।",
+      quoteHinglish: "Family vibes are the best vibes — togetherness that warms the heart! 🏡✨",
+      image: "/images/memory_12.jpg",
+      tag: "Parivar",
+      likes: 167
+    },
+    {
+      id: "q12",
+      category: "hinglish",
+      categoryLabel: "💬 बिंदास Hinglish",
+      quoteHindi: "सादगी में भी एक शाही अंदाज़ है, मेरी बहना पर मुझे हमेशा नाज़ है! 👑✨",
+      quoteHinglish: "Elegance, grace, and an evergreen sweet smile — meri behna sabse best! 🌿🌸",
+      image: "/images/memory_14.jpg",
+      tag: "Evergreen Smile",
+      likes: 121
     }
   ],
 
@@ -302,89 +342,145 @@ export const content = {
   gallery: [
     {
       id: 1,
+      image: "/images/memory_11.jpg",
+      caption: "The sacred Raksha Bandhan ritual — brother-sister love, auspicious thali, and lifelong promises 🧵❤️",
+      tag: "Rakhi Bandhan",
+      category: "rakhi",
+      quoteHindi: "रेशम की डोरी और बहन का दुलार, खुशियों से महके ये पावन त्योहार! 🧵💖",
+      quoteHinglish: "Haath par bandhi rakhi aur dil mein hamesha protection ka vaada — Happy Raksha Bandhan! 🪔✨"
+    },
+    {
+      id: 2,
+      image: "/images/memory_13.jpg",
+      caption: "Festive sibling trio — tilak on forehead, bright smiles, and pure bond 🪔✨",
+      tag: "Sibling Trio",
+      category: "squad",
+      quoteHindi: "माथे पर लाल तिलक और बहनों की दुआएं — हमारी इस तिकड़ी पर कभी कोई आंच न आए! 🪔✨",
+      quoteHinglish: "Brother-sister trio power! Tilak on point and endless smiles with my favorite girls! 💫❤️"
+    },
+    {
+      id: 3,
+      image: "/images/memory_12.jpg",
+      caption: "Full family celebration — warmth, togetherness, and cherished blessings 🏡❤️",
+      tag: "Family Love",
+      category: "family",
+      quoteHindi: "परिवार का प्यार और अपनों का साथ — हर पल को ख़ास बना देता है ये प्यारा संसार! 👨‍👩‍👧‍👦✨",
+      quoteHinglish: "When the whole family gathers together, every moment turns into a lifelong celebration! 🏡❤️"
+    },
+    {
+      id: 4,
+      image: "/images/memory_15.jpg",
+      caption: "Radiant sister duo — unbreakable bond, style, and smiles together 👭✨",
+      tag: "Sister Duo",
+      category: "sister",
+      quoteHindi: "दो बहनों की ये प्यारी जोड़ी, जैसे खुशियों की कोई मीठी लोरी! 👭✨",
+      quoteHinglish: "Two radiant sisters, infinite memories, and unmatched bond! Power duo forever! 💖🌿"
+    },
+    {
+      id: 5,
+      image: "/images/memory_14.jpg",
+      caption: "Graceful sister portrait amidst green serenity and gentle sunshine 🌿🌸",
+      tag: "Sister Portrait",
+      category: "sister",
+      quoteHindi: "प्रकृति की गोद में खिली मुस्कान, सादगी और खूबसूरती की मिसाल मेरी बहना! 🌿🌸",
+      quoteHinglish: "Surrounded by nature with that bright signature smile — pure elegance & grace! 🍃✨"
+    },
+    {
+      id: 6,
       image: "/images/sister_main.jpg",
       caption: "Vibrant Haldi festivities & sibling love in matching sunshine yellow 💛✨",
       tag: "Haldi Celebrations",
+      category: "festive",
       quoteHindi: "हल्दी का रंग और तेरी प्यारी सी मुस्कान — खुशियों से महकता रहे तेरा हर एक पल! 💛✨",
       quoteHinglish: "Haldi ka glow ek taraf, aur teri nautanki ek taraf — full festive queen vibes! 🌟💛"
     },
     {
-      id: 2,
+      id: 7,
       image: "/images/memory_3.jpg",
       caption: "The sacred Raksha Bandhan aarti — prayers, blessings, and forever bonds 🧵❤️",
-      tag: "Rakhi Moment",
+      tag: "Rakhi Aarti",
+      category: "rakhi",
       quoteHindi: "रेशम की डोरी में बंधा है भाई-बहन का सच्चा प्यार, खुशियों से महके बहना का ये पावन त्योहार! 🧵❤️",
       quoteHinglish: "Aarti ki thaali, meethi si smile aur hamesha protection ka vaada — Happy Rakhi! 🌸✨"
     },
     {
-      id: 3,
+      id: 8,
       image: "/images/memory_1.jpg",
       caption: "Festive family celebrations & royal traditional vibes ✨",
       tag: "Family Festivities",
+      category: "family",
       quoteHindi: "परिवार की रौनक और हर महफ़िल की जान — सदा चमकती रहे मेरी प्यारी बहना की शान! 👑",
       quoteHinglish: "Traditional attire mein royal lagti hai, par harkatein wahi bachpan wali! 😎👑"
     },
     {
-      id: 4,
+      id: 9,
       image: "/images/memory_6.jpg",
       caption: "Mountain sunshine, blooming roses, and beautiful scenery with you 🌸🏔️",
       tag: "Nature & Roses",
+      category: "sister",
       quoteHindi: "फूलों जैसी कोमल और वादियों जैसी खूबसूरत — रब से बस यही दुआ है कि तू हमेशा मुस्कुराए! 🌸🏔️",
       quoteHinglish: "Pahadon ki thandi hawa aur tere saath crazy photoshoots — priceless memories! 🌹⛰️"
     },
     {
-      id: 5,
+      id: 10,
       image: "/images/memory_7.jpg",
       caption: "Vibrant festivities, colorful canopies, and adorable family smiles ⛱️✨",
       tag: "Festive Joy",
+      category: "festive",
       quoteHindi: "रंग-बिरंगी खुशियों का ये सवेरा, सदा रोशन रहे ज़िंदगी का बसेरा! ⛱️✨",
       quoteHinglish: "Rang birangi yaadein aur non-stop masti — festive vibes hit different with you! 🌈🎉"
     },
     {
-      id: 6,
+      id: 11,
       image: "/images/memory_8.jpg",
       caption: "Golden traditions, blessings, and treasured family moments 💛",
-      tag: "Golden Vibes",
+      tag: "Golden Traditions",
+      category: "festive",
       quoteHindi: "रिश्तों की मिठास और अपनों का दुलार — भगवान करे हमेशा बना रहे खुशियों का संसार! 💛",
       quoteHinglish: "Desi rituals, candid laughs aur golden moments that we'll cherish forever! 💫✨"
     },
     {
-      id: 7,
+      id: 12,
       image: "/images/memory_9.jpg",
       caption: "Grace, elegance, and timeless beauty 👑✨",
       tag: "Royal Grace",
+      category: "sister",
       quoteHindi: "सादगी में भी एक शाही अंदाज़ है, मेरी बहना पर मुझे हमेशा नाज़ है! 👑✨",
       quoteHinglish: "Royal aesthetic on point! You bring so much grace and charm everywhere you go. 💅✨"
     },
     {
-      id: 8,
+      id: 13,
       image: "/images/memory_10.jpg",
       caption: "Sweet smiles, peaceful evenings, and golden terrace moments 💙",
       tag: "Sweet Moments",
+      category: "sister",
       quoteHindi: "शाम की ठंडी हवा और अपनों की बातें — कितनी प्यारी होती हैं छत पर बीती ये रातें! 🌙",
       quoteHinglish: "Terrace pe baith kar life ki deep baatein aur chai ki chuski — best sibling therapy! ☕🌆"
     },
     {
-      id: 9,
+      id: 14,
       image: "/images/memory_2.jpg",
       caption: "Terrace masti, crazy selfies, and endless laughter with you 😂❤️",
       tag: "Fun Times",
+      category: "squad",
       quoteHindi: "जब हम दोनों साथ हों तो हंसी नहीं रुकती, भाई-बहन की ये मस्ती कभी कम नहीं होती! 😂❤️",
       quoteHinglish: "Gallery mein 100 goofy pictures aur zero serious ones — that is pure sibling goals! 🤪📸"
     },
     {
-      id: 10,
+      id: 15,
       image: "/images/memory_4.jpg",
       caption: "The Sibling Squad — together through every lockdown and adventure 😎",
       tag: "Sibling Squad",
+      category: "squad",
       quoteHindi: "एक साथ जब खड़े हों हम, तो हर मुश्किल हो जाती है कम — बेस्ट सिबलिंग स्क्वॉड! 😎",
       quoteHinglish: "Squad goals unlocked! Chahe koi bhi problem ho, hum sab mil kar sambhal lenge! 🤝💥"
     },
     {
-      id: 11,
+      id: 16,
       image: "/images/memory_5.jpg",
       caption: "Finding inner peace before starting the next sibling argument 🧘‍♀️😂",
-      tag: "Peace Mode",
+      tag: "Peace & Masti",
+      category: "sister",
       quoteHindi: "2 मिनट की शांति, फिर वही तूफान — पर इसी पागलपन में बसती है मेरी जान! 🧘‍♀️😂",
       quoteHinglish: "Acting like the calm and innocent one, but mastermind of all ghar ke pranks! 🤫😇"
     }
